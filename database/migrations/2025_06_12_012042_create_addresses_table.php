@@ -12,12 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('addresses', function (Blueprint $table) {
-    $table->id();
-    $table->foreignId('user_id')->constrained()->onDelete('cascade');
-    $table->string('label'); // Alamat 1, Rumah, Kantor, dll.
-    $table->string('address');
-    $table->timestamps();
-});
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->integer('destination_id')->nullable(); // ID untuk RajaOngkir
+            $table->string('destination_name')->nullable();
+            $table->string('city_name')->nullable();
+            $table->string('province_name')->nullable();
+            $table->string('label');
+            $table->string('address');
+            $table->string('zip')->nullable();
+            $table->string('phone')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**

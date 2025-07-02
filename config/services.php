@@ -32,15 +32,16 @@ return [
     ],
 
     'rajaongkir' => [
-    'api_key' => env('RAJAONGKIR_API_KEY'),
-    'base_url' => env('RAJAONGKIR_BASE_URL'),
-    'origin' => env('RAJAONGKIR_ORIGIN_CITY'), // ID kota asal
-],
+        'key' => env('RAJAONGKIR_API_KEY', 'DvmJTrc7c13bbcb65a9e2f6bjtQOoFfZ'),
+        'url' => env('RAJAONGKIR_URL', 'https://rajaongkir.komerce.id/api/v1'),
+        'origin_city' => env('RAJAONGKIR_ORIGIN_CITY', 501),
+        'timeout' => env('RAJAONGKIR_TIMEOUT', 30),
+    ],
 
-   'midtrans' => [
-    'server_key' => env('MIDTRANS_SERVER_KEY'),
-    'client_key' => env('MIDTRANS_CLIENT_KEY'),
-    'is_production' => env('MIDTRANS_IS_PRODUCTION', false),
+    'midtrans' => [
+        'server_key' => env('MIDTRANS_SERVER_KEY'),
+        'client_key' => env('MIDTRANS_CLIENT_KEY'),
+        'is_production' => env('MIDTRANS_IS_PRODUCTION', false),
     ],
 
 
